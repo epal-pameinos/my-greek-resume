@@ -26,3 +26,19 @@ scrollTopBtn.addEventListener("click", () => {
     behavior: "smooth",
   });
 });
+
+const toggleButton = document.getElementById("toggle-button");
+const navbarLinks = document.getElementById("navbar-links");
+toggleButton.addEventListener("click", () => {
+  const expanded = toggleButton.getAttribute("aria-expanded") === "true";
+  navbarLinks.classList.toggle("active");
+  toggleButton.setAttribute("aria-expanded", !expanded);
+});
+
+// Optional: Close menu when a link is clicked
+document.querySelectorAll(".navbar-links a").forEach((link) => {
+  link.addEventListener("click", () => {
+    navbarLinks.classList.remove("active");
+    toggleButton.setAttribute("aria-expanded", "false");
+  });
+});

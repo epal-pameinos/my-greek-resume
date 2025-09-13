@@ -302,3 +302,77 @@ input:checked + .slider:before {
     font-size: 32px;
   }
 }
+
+.navbar {
+  display: flex;
+  /* align-items: center;
+  justify-content: space-between;
+  color: var(--highlight-color); */
+  padding: 0 16px;
+  height: 60px;
+  position: relative;
+}
+
+.toggle-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  height: 30px;
+  width: 35px;
+  margin-left: 16px;
+  z-index: 1002;
+}
+
+.toggle-button span {
+  height: 4px;
+  width: 100%;
+  background: var(--highlight-color);
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* Overlay menu styles */
+.navbar-links {
+  display: none;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 60px);
+  background-color: var(--bg-color);
+  z-index: 1001;
+  transition: all 0.3s;
+}
+
+.navbar-links.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.navbar-links ul {
+  margin: 40px 0 0 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+}
+
+.navbar-links li {
+  text-align: center;
+  margin: 24px 0;
+}
+
+.navbar-links a {
+  color: var(--highlight-color);
+  text-decoration: none;
+  font-size: 1.4rem;
+  padding: 12px 0;
+  display: block;
+  transition: background 0.2s;
+}
+
+.navbar-links a:hover {
+  background: var(--border-color);
+}
